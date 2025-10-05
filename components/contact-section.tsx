@@ -345,13 +345,14 @@ export function ContactSection () {
 
           {/* Contact Info */}
           <div className='space-y-8 slide-in-right'>
-            <div className='relative rounded-2xl overflow-hidden shadow-lg h-64'>
-              <Image
-                src='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-10-04%20at%2014.53.51_e8d8fd60-bf2KXTiKG94W9hucyQzdPHiwGroMXh.jpg'
-                alt='Location map'
-                fill
-                className='object-cover'
-              />
+            <div className='relative rounded-2xl overflow-hidden shadow-lg h-64 sm:h-80 md:h-96'>
+              <iframe
+                src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63186.18817548871!2d72.529003!3d23.029771!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85d61b5755d9%3A0xa16d1c9035214819!2sNavkar%20Bhavsar%20%26%20co.!5e1!3m2!1sen!2sin!4v1759655467087!5m2!1sen!2sin'
+                className='absolute top-0 left-0 w-full h-full border-0'
+                allowFullScreen=''
+                loading='lazy'
+                referrerPolicy='no-referrer-when-downgrade'
+              ></iframe>
             </div>
 
             <div className='space-y-6'>
