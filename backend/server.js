@@ -35,44 +35,58 @@
 //   console.log(`Server is running on port ${PORT}`)
 // })
 
+const dotenv = require('dotenv')
+dotenv.config()
+const express = require('express')
+const cors = require('cors')
+const contactRoutes = require('./routes/contactRoutes')
 
+const app = express()
+const PORT = process.env.PORT || 5000
 
-
-
-
-
-
-const dotenv = require("dotenv");
-dotenv.config();
-const express = require("express");
-const cors = require("cors");
-const contactRoutes = require("./routes/contactRoutes");
-
-
-const app = express();
-const PORT = process.env.PORT || 5000;
+// Allowed domains
+const allowedOrigins = [
+  'https://worknestindiacom.netlify.app', 
+  'http://localhost:3000/', 
+  'https://work-nest-india.vercel.app/' 
+]
 
 // Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true)
+      if (allowedOrigins.indexOf(origin) === -1) {
+        const msg = `The CORS policy for this site does not allow access from the specified Origin.`
+        return callback(new Error(msg), false)
+      }
+      return callback(null, true)
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true // agar cookies ya auth headers bhejna ho
+  })
+)
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 // Routes
-app.use("/api/contact", contactRoutes);
+app.use('/api/contact', contactRoutes)
 
 // Health check
-app.get("/api/health", (req, res) => {
-  res.status(200).json({ status: "OK", message: "Server is running" });
-});
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'OK', message: 'Server is running' })
+})
 
 // Error handling
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.error(err.stack)
   res.status(500).json({
     success: false,
-    message: "Something went wrong!",
-    error: process.env.NODE_ENV === "development" ? err.message : undefined,
-  });
-});
+    message: 'Something went wrong!',
+    error: process.env.NODE_ENV === 'development' ? err.message : undefined
+  })
+})
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
