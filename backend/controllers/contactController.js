@@ -1,13 +1,13 @@
-const nodemailer = require("nodemailer")
+const nodemailer = require('nodemailer')
 
 // Create reusable transporter
 const createTransporter = () => {
   return nodemailer.createTransport({
-    service: process.env.EMAIL_SERVICE || "gmail",
+    service: process.env.EMAIL_SERVICE || 'gmail',
     auth: {
       user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASSWORD,
-    },
+      pass: process.env.EMAIL_PASSWORD
+    }
   })
 }
 
@@ -20,7 +20,7 @@ const sendContactEmail = async (req, res) => {
     if (!name || !email || !phone || !message) {
       return res.status(400).json({
         success: false,
-        message: "All fields are required",
+        message: 'All fields are required'
       })
     }
 
@@ -29,7 +29,7 @@ const sendContactEmail = async (req, res) => {
     if (!emailRegex.test(email)) {
       return res.status(400).json({
         success: false,
-        message: "Invalid email format",
+        message: 'Invalid email format'
       })
     }
 
@@ -38,7 +38,7 @@ const sendContactEmail = async (req, res) => {
     // 📩 Admin Email Template
     const adminMailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.ADMIN_EMAIL || "contact@worknestindia.in",
+      to: process.env.ADMIN_EMAIL || 'contact@worknestindia.in',
       subject: `📥 New Contact Form Submission - ${name}`,
       html: `
       <div style="background-color:#f6f8fb; padding:40px 0; font-family:'Segoe UI', Arial, sans-serif;">
@@ -66,14 +66,14 @@ const sendContactEmail = async (req, res) => {
           </div>
         </div>
       </div>
-      `,
+      `
     }
 
     // 📧 User Confirmation Template
     const userMailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: "✅ We’ve received your message — Worknest India",
+      subject: '✅ We’ve received your message — Worknest India',
       html: `
       <div style="background-color:#f6f8fb; padding:40px 0; font-family:'Segoe UI', Arial, sans-serif;">
         <div style="max-width:650px; margin:auto; background-color:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.05);">
@@ -94,14 +94,16 @@ const sendContactEmail = async (req, res) => {
             <p style="color:#555;">Warm regards,</p>
             <p style="color:#0056D2; font-weight:bold;">Worknest India Team</p>
           </div>
-          <div style="background-color:#f1f4f8; padding:20px; text-align:center; font-size:12px; color:#888;">
-            <p style="margin:0;">Worknest India | Ahmedabad, Gujarat</p>
-            <p style="margin:5px 0;">📞 +91 95868 19690 | +91 89806 96886</p>
-            <p style="margin:0;">📧 contact@worknestindia.in</p>
-          </div>
+         <div style="background-color:#f1f4f8; padding:20px; text-align:center; font-size:12px; color:#888;">
+          <p style="margin:0;">Navkar Bhavsar & Co. | Ahmedabad, Gujarat - 380054</p>
+          <p style="margin:5px 0;">📍 Privillion East Wing, 2nd Floor, Behind Iskon Temple, SG Highway</p>
+          <p style="margin:5px 0;">📞 +91 95868 19690 | +91 89806 96886</p>
+          <p style="margin:0;">📧 contact@worknestindia.in</p>
+        </div>
+
         </div>
       </div>
-      `,
+      `
     }
 
     // Send both emails
@@ -110,14 +112,15 @@ const sendContactEmail = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Your message has been sent successfully! We’ll contact you soon.",
+      message:
+        'Your message has been sent successfully! We’ll contact you soon.'
     })
   } catch (error) {
-    console.error("Error sending email:", error)
+    console.error('Error sending email:', error)
     res.status(500).json({
       success: false,
-      message: "Failed to send message. Please try again later.",
-      error: process.env.NODE_ENV === "development" ? error.message : undefined,
+      message: 'Failed to send message. Please try again later.',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
     })
   }
 }
