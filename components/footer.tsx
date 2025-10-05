@@ -71,7 +71,7 @@ export function Footer () {
               <li>
                 <button
                   onClick={() => scrollToSection('home')}
-                  className='text-sm text-background/70 hover:text-primary transition-colors'
+                  className='text-sm text-background/70 hover:text-primary transition-colors cursor-pointer'
                 >
                   Home
                 </button>
@@ -79,7 +79,7 @@ export function Footer () {
               <li>
                 <button
                   onClick={() => scrollToSection('about')}
-                  className='text-sm text-background/70 hover:text-primary transition-colors'
+                  className='text-sm text-background/70 hover:text-primary transition-colors cursor-pointer'
                 >
                   About Us
                 </button>
@@ -87,7 +87,7 @@ export function Footer () {
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className='text-sm text-background/70 hover:text-primary transition-colors'
+                  className='text-sm text-background/70 hover:text-primary transition-colors cursor-pointer'
                 >
                   Services
                 </button>
@@ -95,7 +95,7 @@ export function Footer () {
               <li>
                 <button
                   onClick={() => scrollToSection('partner')}
-                  className='text-sm text-background/70 hover:text-primary transition-colors'
+                  className='text-sm text-background/70 hover:text-primary transition-colors cursor-pointer'
                 >
                   Join as a Partner
                 </button>
@@ -103,7 +103,7 @@ export function Footer () {
               <li>
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className='text-sm text-background/70 hover:text-primary transition-colors'
+                  className='text-sm text-background/70 hover:text-primary transition-colors cursor-pointer'
                 >
                   Contact Us
                 </button>
@@ -118,7 +118,7 @@ export function Footer () {
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className='text-sm text-background/70 hover:text-primary transition-colors'
+                  className='text-sm text-background/70 hover:text-primary transition-colors cursor-pointer'
                 >
                   Banking Services
                 </button>
@@ -126,7 +126,7 @@ export function Footer () {
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className='text-sm text-background/70 hover:text-primary transition-colors'
+                  className='text-sm text-background/70 hover:text-primary transition-colors cursor-pointer'
                 >
                   Financial Products
                 </button>
@@ -134,7 +134,7 @@ export function Footer () {
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className='text-sm text-background/70 hover:text-primary transition-colors'
+                  className='text-sm text-background/70 hover:text-primary transition-colors cursor-pointer'
                 >
                   Insurance
                 </button>
@@ -171,9 +171,8 @@ export function Footer () {
                 </a>
               </li>
               <li className='pt-2'>
-                Address: Worknest India, A-11th Floor, The first, B/h Keshav
-                Baugh Party Plot, Nr. Shivalik High-Street, Vastrapur,
-                Ahmedabad, Gujarat 380015
+                Address: Navkar Bhavsar & Co., Privillion East Wing, 2nd Floor,
+                Behind Iskon Temple, SG Highway, Ahmedabad, Gujarat - 380054
               </li>
             </ul>
           </div>

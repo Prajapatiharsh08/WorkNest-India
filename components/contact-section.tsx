@@ -160,7 +160,7 @@
 //     </section>
 //   )
 // }
-"use client"
+'use client'
 
 import type React from 'react'
 import { useState, useEffect } from 'react'
@@ -407,18 +407,16 @@ export function ContactSection () {
                   <h4 className='font-semibold text-foreground mb-1'>
                     Address
                   </h4>
-                  <p className='text-muted-foreground'>Worknest India</p>
+                  <p className='text-muted-foreground'>Navkar Bhavsar & Co.</p>
                   <p className='text-muted-foreground'>
-                    A-11th Floor, The first,
+                    Privillion East Wing, 2nd Floor,
                   </p>
                   <p className='text-muted-foreground'>
-                    B/h Keshav Baugh Party Plot
+                    Behind Iskon Temple, SG Highway,
                   </p>
                   <p className='text-muted-foreground'>
-                    Nr. Shivalik High-Street,
+                    Ahmedabad, Gujarat - 380054
                   </p>
-                  <p className='text-muted-foreground'>Vastrapur, Ahmedabad,</p>
-                  <p className='text-muted-foreground'>Gujarat 380015</p>
                 </div>
               </div>
             </div>
