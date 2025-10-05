@@ -46,16 +46,15 @@ const PORT = process.env.PORT || 5000
 
 // Allowed domains
 const allowedOrigins = [
-  'https://worknestindiacom.netlify.app', 
-  'http://localhost:3000/', 
-  'https://work-nest-india.vercel.app/' 
+  'https://worknestindiacom.netlify.app',
+  'http://localhost:3000',
+  'https://work-nest-india.vercel.app'
 ]
 
 // Middleware
 app.use(
   cors({
     origin: function (origin, callback) {
-      // allow requests with no origin (like mobile apps or curl requests)
       if (!origin) return callback(null, true)
       if (allowedOrigins.indexOf(origin) === -1) {
         const msg = `The CORS policy for this site does not allow access from the specified Origin.`
@@ -63,8 +62,18 @@ app.use(
       }
       return callback(null, true)
     },
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true // agar cookies ya auth headers bhejna ho
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true
+  })
+)
+
+// Explicit preflight handling (safer)
+app.options(
+  '*',
+  cors({
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true
   })
 )
 
