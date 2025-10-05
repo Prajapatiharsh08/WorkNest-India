@@ -27,7 +27,7 @@ export const sendContactForm = createAsyncThunk(
   "contact/sendForm",
   async (formData: ContactFormData, { rejectWithValue }) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact/send`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
