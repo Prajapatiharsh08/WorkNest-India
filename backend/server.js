@@ -34,9 +34,13 @@
 // app.listen(PORT, () => {
 //   console.log(`Server is running on port ${PORT}`)
 // })
-const dotenv = require('dotenv');
-dotenv.config();
 
+
+
+
+
+// server.js
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const contactRoutes = require('./routes/contactRoutes');
@@ -47,13 +51,13 @@ const PORT = process.env.PORT || 5000;
 // ✅ Allowed domains
 const allowedOrigins = [
   'https://globuz.in',     // Production site
-  'http://localhost:3000'  // Local development (optional)
+  'http://localhost:3000'  // Local development
 ];
 
-// ✅ Configure CORS properly
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true); // Allow tools like Postman or curl
+// ✅ Configure CORS
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); // Allow tools like Postman
     if (allowedOrigins.includes(origin)) {
       return callback(null, true);
     } else {
@@ -64,16 +68,9 @@ const corsOptions = {
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
-  optionsSuccessStatus: 200
-};
+}));
 
-// ✅ Apply CORS globally
-app.use(cors(corsOptions));
-
-// ✅ Handle preflight requests
-app.options('*', cors(corsOptions));
-
-// ✅ Parse JSON and form data
+// ✅ Parse JSON and URL-encoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -85,7 +82,7 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Server is running' });
 });
 
-// ✅ Error handling middleware
+// ✅ Global error handler
 app.use((err, req, res, next) => {
   console.error('🔥 Error:', err.message);
   res.status(500).json({
