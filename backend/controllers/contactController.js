@@ -128,10 +128,7 @@
 // module.exports = { sendContactEmail }
 
 
-
-
-
-const createTransporter = require("../utils/googleTransporter");
+const sendEmail = require("../utils/googleTransporter");
 
 const sendContactEmail = async (req, res) => {
   try {
@@ -146,14 +143,8 @@ const sendContactEmail = async (req, res) => {
       return res.status(400).json({ success: false, message: "Invalid email format" });
     }
 
-    const transporter = await createTransporter();
-
     // Admin Email
-    const adminMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.ADMIN_EMAIL,
-      subject: `📥 New Contact Form Submission - ${name}`,
-      html: `
+    const adminHtml = `
       <div style="background:#f6f8fb; padding:20px; font-family:sans-serif;">
         <h2>New Contact Submission</h2>
         <p><b>Name:</b> ${name}</p>
@@ -161,26 +152,19 @@ const sendContactEmail = async (req, res) => {
         <p><b>Phone:</b> ${phone}</p>
         <p><b>Message:</b> ${message}</p>
       </div>
-      `
-    };
+    `;
 
     // User Confirmation Email
-    const userMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: email,
-      subject: "✅ We’ve received your message — Globuz India",
-      html: `
+    const userHtml = `
       <div style="background:#f6f8fb; padding:20px; font-family:sans-serif;">
         <h2>Thank You, ${name}</h2>
         <p>We’ve received your message and our team will contact you soon.</p>
         <p><b>Your Message:</b> ${message}</p>
       </div>
-      `
-    };
+    `;
 
-    // Send both emails
-    await transporter.sendMail(adminMailOptions);
-    await transporter.sendMail(userMailOptions);
+    await sendEmail(process.env.ADMIN_EMAIL, `📥 New Contact Form Submission - ${name}`, adminHtml);
+    await sendEmail(email, "✅ We’ve received your message — Globuz India", userHtml);
 
     res.status(200).json({ success: true, message: "Your message has been sent successfully!" });
   } catch (error) {
@@ -190,3 +174,4 @@ const sendContactEmail = async (req, res) => {
 };
 
 module.exports = { sendContactEmail };
+
