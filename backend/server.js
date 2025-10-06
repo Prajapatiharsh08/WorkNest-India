@@ -34,64 +34,68 @@
 // app.listen(PORT, () => {
 //   console.log(`Server is running on port ${PORT}`)
 // })
+const dotenv = require('dotenv');
+dotenv.config();
 
-const dotenv = require('dotenv')
-dotenv.config()
-const express = require('express')
-const cors = require('cors')
-const contactRoutes = require('./routes/contactRoutes')
+const express = require('express');
+const cors = require('cors');
+const contactRoutes = require('./routes/contactRoutes');
 
-const app = express()
-const PORT = process.env.PORT || 5000
+const app = express();
+const PORT = process.env.PORT || 5000;
 
-// Allowed domains
+// ✅ Allowed domains
 const allowedOrigins = [
-  'https://globuz.in'
-]
+  'https://globuz.in',     // Production site
+  'http://localhost:3000'  // Local development (optional)
+];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true) // Postman, curl, etc.
-      if (allowedOrigins.indexOf(origin) === -1) {
-        return callback(new Error('CORS not allowed'), false)
-      }
-      return callback(null, true)
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: true
-  })
-)
+// ✅ Configure CORS properly
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // Allow tools like Postman or curl
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      console.warn(`🚫 CORS blocked: ${origin}`);
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
 
-// Explicit preflight handling
-app.options(
-  '*',
-  cors({
-    origin: allowedOrigins,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: true
-  })
-)
+// ✅ Apply CORS globally
+app.use(cors(corsOptions));
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+// ✅ Handle preflight requests
+app.options('*', cors(corsOptions));
 
-// Routes
-app.use('/api/contact', contactRoutes)
+// ✅ Parse JSON and form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Health check
+// ✅ Routes
+app.use('/api/contact', contactRoutes);
+
+// ✅ Health check route
 app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'OK', message: 'Server is running' })
-})
+  res.status(200).json({ status: 'OK', message: 'Server is running' });
+});
 
-// Error handling
+// ✅ Error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack)
+  console.error('🔥 Error:', err.message);
   res.status(500).json({
     success: false,
-    message: 'Something went wrong!',
-    error: process.env.NODE_ENV === 'development' ? err.message : undefined
-  })
-})
+    message: err.message || 'Something went wrong!',
+    error: process.env.NODE_ENV === 'development' ? err.stack : undefined
+  });
+});
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+// ✅ Start server
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
