@@ -2,7 +2,7 @@ import Image from 'next/image'
 import image3 from '../public/image3.png'
 
 const steps = [
-  'Register as a partner with Worknest India - no fee required',
+  'Register as a partner with Globuz India - no fee required',
   'Complete our quick online training program',
   'Start offering financial products to your network',
   'Earn commissions on successful referrals'
@@ -23,7 +23,7 @@ export function PartnerSection () {
               </h2>
               <p className='text-lg text-muted-foreground leading-relaxed'>
                 Want to earn by referring bank accounts and financial services?
-                Worknest India gives you access to Gromo's marketplace through
+                Globuz India gives you access to Gromo's marketplace through
                 IndiaSales.club. Be your own boss and start earning from day
                 one.
               </p>
@@ -63,7 +63,7 @@ export function PartnerSection () {
                   </span>
                 </div>
                 <p className='text-sm text-muted-foreground italic mb-3'>
-                  "I joined Worknest India last year and now earn over ₹50,000
+                  "I joined Globuz India last year and now earn over ₹50,000
                   monthly by helping people access financial services. The best
                   part? Zero investment and flexible hours!"
                 </p>

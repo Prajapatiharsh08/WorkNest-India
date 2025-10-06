@@ -12,9 +12,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Worknest India - Empower Your Earning Journey',
+  title: 'Globuz India',
   description:
-    "Join Worknest India and start earning by distributing banking, finance, and insurance products from India's top financial institutions.",
+    "Join Globuz India and start earning by distributing banking, finance, and insurance products from India's top financial institutions.",
   generator: 'v0.app'
 }
 

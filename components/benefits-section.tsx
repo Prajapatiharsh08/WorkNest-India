@@ -41,7 +41,7 @@ export function BenefitsSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Why Join Worknest India?
+            Why Join Globuz India?
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </div>

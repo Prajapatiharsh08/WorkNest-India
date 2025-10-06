@@ -42,7 +42,7 @@ export default function Home() {
       <ServicesSection />
       <PartnerSection />
       <ContactSection />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   )
 }

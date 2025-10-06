@@ -1,7 +1,7 @@
 {
-  "name": "worknest-backend",
+  "name": "Globuz-backend",
   "version": "1.0.0",
-  "description": "Backend for Worknest India contact form",
+  "description": "Backend for Globuz India contact form",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

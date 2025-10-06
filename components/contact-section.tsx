@@ -108,17 +108,17 @@
 //                 <div>
 //                   <h4 className="font-semibold text-foreground mb-1">Email</h4>
 //                   <a
-//                     href="mailto:contact@worknestindia.in"
+//                     href="mailto:contact@Globuzindia.in"
 //                     className="text-muted-foreground hover:text-primary transition-colors"
 //                   >
-//                     contact@worknestindia.in
+//                     contact@Globuzindia.in
 //                   </a>
 //                   <br />
 //                   <a
-//                     href="mailto:info@worknestindia.in"
+//                     href="mailto:info@Globuzindia.in"
 //                     className="text-muted-foreground hover:text-primary transition-colors"
 //                   >
-//                     info@worknestindia.in
+//                     info@Globuzindia.in
 //                   </a>
 //                 </div>
 //               </div>
@@ -145,7 +145,7 @@
 //                 </div>
 //                 <div>
 //                   <h4 className="font-semibold text-foreground mb-1">Address</h4>
-//                   <p className="text-muted-foreground">Worknest India</p>
+//                   <p className="text-muted-foreground">Globuz India</p>
 //                   <p className="text-muted-foreground">A-11th Floor, The first,</p>
 //                   <p className="text-muted-foreground">B/h Keshav Baugh Party Plot</p>
 //                   <p className="text-muted-foreground">Nr. Shivalik High-Street,</p>
@@ -362,17 +362,17 @@ export function ContactSection () {
                 <div>
                   <h4 className='font-semibold text-foreground mb-1'>Email</h4>
                   <a
-                    href='mailto:contact@worknestindia.in'
+                    href='mailto:contact@Globuzindia.in'
                     className='text-muted-foreground hover:text-primary transition-colors'
                   >
-                    contact@worknestindia.in
+                    contact@Globuzindia.in
                   </a>
                   <br />
                   <a
-                    href='mailto:info@worknestindia.in'
+                    href='mailto:info@Globuzindia.in'
                     className='text-muted-foreground hover:text-primary transition-colors'
                   >
-                    info@worknestindia.in
+                    info@Globuzindia.in
                   </a>
                 </div>
               </div>

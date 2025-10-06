@@ -46,9 +46,7 @@ const PORT = process.env.PORT || 5000
 
 // Allowed domains
 const allowedOrigins = [
-  'https://worknestindiacom.netlify.app',
-  'http://localhost:3000',
-  'https://work-nest-india.vercel.app'
+  'https://globuz.in/'
 ]
 
 app.use(

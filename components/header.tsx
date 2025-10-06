@@ -39,8 +39,8 @@ export function Header() {
             <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-lg">W</span>
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-foreground">Worknest India</h1>
+            <div className="cursor-pointer">
+              <h1 className="text-xl font-bold text-foreground">Globuz India</h1>
               <p className="text-xs text-muted-foreground italic">where opputinity nest!</p>
             </div>
           </button>

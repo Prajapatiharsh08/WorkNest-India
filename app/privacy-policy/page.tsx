@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Welcome to Worknest India. We are committed to protecting your personal information and your right to
+              Welcome to Globuz India. We are committed to protecting your personal information and your right to
               privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when
               you visit our website or use our services.
             </p>
@@ -81,8 +81,8 @@ export default function PrivacyPolicy() {
               If you have questions or comments about this Privacy Policy, please contact us at:
             </p>
             <div className="bg-accent p-6 rounded-xl mt-4">
-              <p className="text-foreground font-semibold">Worknest India</p>
-              <p className="text-muted-foreground">Email: contact@worknestindia.in</p>
+              <p className="text-foreground font-semibold">Globuz India</p>
+              <p className="text-muted-foreground">Email: contact@Globuzindia.in</p>
               <p className="text-muted-foreground">Phone: +91 95868 19690</p>
               <p className="text-muted-foreground">
                 Address: A-11th Floor, The first, B/h Keshav Baugh Party Plot, Nr. Shivalik High-Street, Vastrapur,

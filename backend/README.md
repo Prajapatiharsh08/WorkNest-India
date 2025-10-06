@@ -1,4 +1,4 @@
-# Worknest India Backend
+# Globuz India Backend
 
 Backend server for handling contact form submissions using Node.js, Express, and Nodemailer.
 
@@ -27,7 +27,7 @@ NODE_ENV=development
 EMAIL_SERVICE=gmail
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASSWORD=your-app-password
-ADMIN_EMAIL=contact@worknestindia.in
+ADMIN_EMAIL=contact@Globuzindia.in
 \`\`\`
 
 ### 3. Gmail Setup (if using Gmail)

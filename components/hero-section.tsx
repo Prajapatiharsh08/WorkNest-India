@@ -44,7 +44,7 @@ export function HeroSection() {
                 </span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                Join Worknest India — Business Solutions, your trusted partner in distributing banking, finance, and
+                Join Globuz India — Business Solutions, your trusted partner in distributing banking, finance, and
                 insurance products from India's top financial institutions. Partnered with Gromo and live on
                 IndiaSales.club, we help you start earning with zero investment and full support.
               </p>

@@ -26,7 +26,7 @@ export function Footer () {
               <div className='w-8 h-8 bg-primary rounded-full flex items-center justify-center'>
                 <span className='text-white font-bold'>W</span>
               </div>
-              <h3 className='text-xl font-bold'>Worknest India</h3>
+              <h3 className='text-xl font-bold'>Globuz India</h3>
             </div>
             <p className='text-sm text-background/70 mb-4'>
               Your trusted partner in distributing banking, finance, and
@@ -148,18 +148,26 @@ export function Footer () {
             <ul className='space-y-2 text-sm text-background/70'>
               <li>
                 <a
-                  href='mailto:contact@worknestindia.in'
+                  href='mailto:contact@Globuzindia.in'
                   className='hover:text-primary transition-colors'
                 >
-                  Email: contact@worknestindia.in
+                  Email: contact@globuz.in
                 </a>
               </li>
               <li>
                 <a
-                  href='tel:+919586819690'
+                  href='tel:+919737873192'
                   className='hover:text-primary transition-colors'
                 >
-                  Phone: +91 95868 19690
+                  Phone: +91 9737873192
+                </a>
+              </li>
+              <li>
+                <a
+                  href='tel:+919727549771'
+                  className='hover:text-primary transition-colors'
+                >
+                  Phone: +91 9727549771
                 </a>
               </li>
               <li>
@@ -182,7 +190,7 @@ export function Footer () {
           <div className='flex flex-col md:flex-row md:items-center md:justify-center gap-4 md:gap-8'>
             {/* Copyright */}
             <p className='text-sm text-background/70'>
-              © 2025 Worknest India. All rights reserved.
+              © 2025 Globuz India. All rights reserved.
             </p>
 
             {/* Divider for desktop */}

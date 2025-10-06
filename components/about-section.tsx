@@ -31,7 +31,7 @@ export function AboutSection() {
             <div>
               <h3 className="text-3xl font-bold text-foreground mb-4">Who We Are</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Worknest India, registered in February 2025, is an official partner of Gromo. We operate via our
+                Globuz India, registered in February 2025, is an official partner of Gromo. We operate via our
                 platform IndiaSales.club, aiming to create earning opportunities by connecting people to high-demand
                 BFSI (Banking, Financial Services, and Insurance) products.
               </p>

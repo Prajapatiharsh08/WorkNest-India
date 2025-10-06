@@ -9,7 +9,7 @@ export default function TermsAndConditions() {
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">1. Agreement to Terms</h2>
             <p className="text-muted-foreground leading-relaxed">
-              By accessing or using Worknest India's services, you agree to be bound by these Terms and Conditions. If
+              By accessing or using Globuz India's services, you agree to be bound by these Terms and Conditions. If
               you disagree with any part of these terms, you may not access our services.
             </p>
           </section>
@@ -41,7 +41,7 @@ export default function TermsAndConditions() {
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">4. Intellectual Property</h2>
             <p className="text-muted-foreground leading-relaxed">
-              All content, trademarks, logos, and intellectual property on our platform are owned by Worknest India or
+              All content, trademarks, logos, and intellectual property on our platform are owned by Globuz India or
               our licensors. You may not use, reproduce, or distribute any content without our express written
               permission.
             </p>
@@ -72,7 +72,7 @@ export default function TermsAndConditions() {
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">7. Limitation of Liability</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Worknest India shall not be liable for any indirect, incidental, special, consequential, or punitive
+              Globuz India shall not be liable for any indirect, incidental, special, consequential, or punitive
               damages resulting from your use of or inability to use our services. Our total liability shall not exceed
               the amount of commissions paid to you in the six months preceding the claim.
             </p>
@@ -102,8 +102,8 @@ export default function TermsAndConditions() {
               For questions about these Terms and Conditions, please contact us at:
             </p>
             <div className="bg-accent p-6 rounded-xl mt-4">
-              <p className="text-foreground font-semibold">Worknest India</p>
-              <p className="text-muted-foreground">Email: contact@worknestindia.in</p>
+              <p className="text-foreground font-semibold">Globuz India</p>
+              <p className="text-muted-foreground">Email: contact@Globuzindia.in</p>
               <p className="text-muted-foreground">Phone: +91 95868 19690</p>
               <p className="text-muted-foreground">
                 Address: A-11th Floor, The first, B/h Keshav Baugh Party Plot, Nr. Shivalik High-Street, Vastrapur,
