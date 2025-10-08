@@ -3,7 +3,7 @@
 import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 
-export function Footer() {
+export function Footer () {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -35,28 +35,28 @@ export function Footer() {
             <div className='flex gap-3'>
               <button
                 onClick={() => handleSocialClick('Facebook')}
-                className='w-8 h-8 bg-black/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
+                className='w-8 h-8 cursor-pointer bg-black/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
                 aria-label='Facebook'
               >
                 <Facebook className='w-4 h-4' />
               </button>
               <button
                 onClick={() => handleSocialClick('Instagram')}
-                className='w-8 h-8 bg-black/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
+                className='w-8 h-8 cursor-pointer bg-black/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
                 aria-label='Instagram'
               >
                 <Instagram className='w-4 h-4' />
               </button>
               <button
                 onClick={() => handleSocialClick('Twitter')}
-                className='w-8 h-8 bg-black/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
+                className='w-8 h-8 cursor-pointer bg-black/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
                 aria-label='Twitter'
               >
                 <Twitter className='w-4 h-4' />
               </button>
               <button
                 onClick={() => handleSocialClick('LinkedIn')}
-                className='w-8 h-8 bg-black/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
+                className='w-8 h-8 cursor-pointer bg-black/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
                 aria-label='LinkedIn'
               >
                 <Linkedin className='w-4 h-4' />
@@ -68,18 +68,21 @@ export function Footer() {
           <div>
             <h4 className='text-lg font-bold mb-4'>QUICK LINKS</h4>
             <ul className='space-y-2'>
-              {['home', 'about', 'services', 'partner', 'contact'].map((section) => (
-                <li key={section}>
-                  <button
-                    onClick={() => scrollToSection(section)}
-                    className='text-sm text-black/70 hover:text-primary transition-colors cursor-pointer'
-                  >
-                    {section === 'partner'
-                      ? 'Join as a Partner'
-                      : section.charAt(0).toUpperCase() + section.slice(1).replace('-', ' ')}
-                  </button>
-                </li>
-              ))}
+              {['home', 'about', 'services', 'partner', 'contact'].map(
+                section => (
+                  <li key={section}>
+                    <button
+                      onClick={() => scrollToSection(section)}
+                      className='text-sm text-black/70 hover:text-primary transition-colors cursor-pointer'
+                    >
+                      {section === 'partner'
+                        ? 'Join as a Partner'
+                        : section.charAt(0).toUpperCase() +
+                          section.slice(1).replace('-', ' ')}
+                    </button>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -87,23 +90,26 @@ export function Footer() {
           <div>
             <h4 className='text-lg font-bold mb-4'>SERVICES</h4>
             <ul className='space-y-2'>
-              {['Banking Services', 'Financial Products', 'Insurance'].map((service) => (
-                <li key={service}>
-                  <button
-                    onClick={() => scrollToSection('services')}
-                    className='text-sm text-black/70 hover:text-primary transition-colors cursor-pointer'
-                  >
-                    {service}
-                  </button>
-                </li>
-              ))}
+              {['Banking Services', 'Financial Products', 'Insurance'].map(
+                service => (
+                  <li key={service}>
+                    <button
+                      onClick={() => scrollToSection('services')}
+                      className='text-sm text-black/70 hover:text-primary transition-colors cursor-pointer'
+                    >
+                      {service}
+                    </button>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
             <h4 className='text-lg font-bold mb-4'>CONTACT</h4>
-            <ul className='space-y-2 text-sm text-black/70'>
+            <ul className='space-y-3 text-sm text-black/70'>
+              {/* Email */}
               <li>
                 <a
                   href='mailto:contact@globuz.in'
@@ -112,24 +118,48 @@ export function Footer() {
                   Email: contact@globuz.in
                 </a>
               </li>
+
+              {/* Phone Numbers */}
               <li>
-                <a href='tel:+919737873192' className='hover:text-primary transition-colors'>
+                <a
+                  href='tel:+919737873192'
+                  className='hover:text-primary transition-colors block'
+                >
                   Phone: +91 9737873192
                 </a>
-              </li>
-              <li>
-                <a href='tel:+919727549771' className='hover:text-primary transition-colors'>
+                <a
+                  href='tel:+919727549771'
+                  className='hover:text-primary transition-colors block'
+                >
                   Phone: +91 9727549771
                 </a>
-              </li>
-              <li>
-                <a href='tel:+918980696886' className='hover:text-primary transition-colors'>
-                  Phone: +91 89806 96886
+                <a
+                  href='tel:+918980696886'
+                  className='hover:text-primary transition-colors block'
+                >
+                  Phone: +91 8980696886
                 </a>
               </li>
-              <li className='pt-2'>
-                Address: Navkar Bhavsar & Co., Privillion East Wing, 2nd Floor,
-                Behind Iskon Temple, SG Highway, Ahmedabad, Gujarat - 380054
+
+              {/* Ahmedabad Address */}
+              <li className='pt-3'>
+                <p className='font-semibold text-foreground mb-1'>
+                  Ahmedabad Office:
+                </p>
+                <p>Navkar Bhavsar & Co.</p>
+                <p>Privillion East Wing, 2nd Floor,</p>
+                <p>Behind Iskon Temple, SG Highway,</p>
+                <p>Ahmedabad, Gujarat - 380054</p>
+              </li>
+
+              {/* Mumbai Address */}
+              <li className='pt-3'>
+                <p className='font-semibold text-foreground mb-1'>
+                  Mumbai Office:
+                </p>
+                <p>Duru House, 2nd & 3rd Floor,</p>
+                <p>Juhu Tara Road, Juhu,</p>
+                <p>Mumbai, Maharashtra - 400049</p>
               </li>
             </ul>
           </div>
@@ -146,11 +176,17 @@ export function Footer() {
 
             {/* Privacy & Terms */}
             <p className='text-sm text-black/70'>
-              <Link href='/privacy-policy' className='hover:text-primary transition-colors'>
+              <Link
+                href='/privacy-policy'
+                className='hover:text-primary transition-colors'
+              >
                 Privacy Policy
               </Link>{' '}
               •{' '}
-              <Link href='/terms-and-conditions' className='hover:text-primary transition-colors'>
+              <Link
+                href='/terms-and-conditions'
+                className='hover:text-primary transition-colors'
+              >
                 Terms & Conditions
               </Link>
             </p>

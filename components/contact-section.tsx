@@ -345,7 +345,7 @@ export function ContactSection () {
 
           {/* Contact Info */}
           <div className='space-y-8 slide-in-right'>
-            <div className='relative rounded-2xl overflow-hidden shadow-lg h-64 sm:h-80 md:h-96'>
+            <div className='relative rounded-2xl overflow-hidden shadow-md h-48 sm:h-60 md:h-72'>
               <iframe
                 src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63186.18817548871!2d72.529003!3d23.029771!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85d61b5755d9%3A0xa16d1c9035214819!2sNavkar%20Bhavsar%20%26%20co.!5e1!3m2!1sen!2sin!4v1759655467087!5m2!1sen!2sin'
                 className='absolute top-0 left-0 w-full h-full border-0'
@@ -368,12 +368,12 @@ export function ContactSection () {
                     contact@Globuzindia.in
                   </a>
                   <br />
-                  <a
+                  {/* <a
                     href='mailto:info@Globuzindia.in'
                     className='text-muted-foreground hover:text-primary transition-colors'
                   >
                     info@Globuzindia.in
-                  </a>
+                  </a> */}
                 </div>
               </div>
 
@@ -384,39 +384,75 @@ export function ContactSection () {
                 <div>
                   <h4 className='font-semibold text-foreground mb-1'>Phone</h4>
                   <a
-                    href='tel:+919586819690'
+                    href='tel:+919737873192'
                     className='text-muted-foreground hover:text-primary transition-colors'
                   >
-                    +91 95868 19690
+                    +91 9737873192
+                  </a>
+                  <br />
+                  <a
+                    href='tel:+919727549771'
+                    className='text-muted-foreground hover:text-primary transition-colors'
+                  >
+                    +91 9727549771
                   </a>
                   <br />
                   <a
                     href='tel:+918980696886'
                     className='text-muted-foreground hover:text-primary transition-colors'
                   >
-                    +91 89806 96886
+                    +91 8980696886
                   </a>
                 </div>
               </div>
 
-              <div className='flex gap-4 p-4 bg-card rounded-xl shadow-md hover:shadow-lg transition-shadow border border-border'>
-                <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0'>
-                  <MapPin className='w-6 h-6 text-primary' />
+              <div className='flex flex-col gap-4'>
+                {/* Ahmedabad Address */}
+                <div className='flex gap-4 p-4 bg-card rounded-xl shadow-md hover:shadow-lg transition-shadow border border-border'>
+                  <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0'>
+                    <MapPin className='w-6 h-6 text-primary' />
+                  </div>
+                  <div>
+                    <h4 className='font-semibold text-foreground mb-1'>
+                      Address (Ahmedabad)
+                    </h4>
+                    <p className='text-muted-foreground'>
+                      Navkar Bhavsar & Co.
+                    </p>
+                    <p className='text-muted-foreground'>
+                      Privillion East Wing, 2nd Floor,
+                    </p>
+                    <p className='text-muted-foreground'>
+                      Behind Iskon Temple, SG Highway,
+                    </p>
+                    <p className='text-muted-foreground'>
+                      Ahmedabad, Gujarat - 380054
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className='font-semibold text-foreground mb-1'>
-                    Address
-                  </h4>
-                  <p className='text-muted-foreground'>Navkar Bhavsar & Co.</p>
-                  <p className='text-muted-foreground'>
-                    Privillion East Wing, 2nd Floor,
-                  </p>
-                  <p className='text-muted-foreground'>
-                    Behind Iskon Temple, SG Highway,
-                  </p>
-                  <p className='text-muted-foreground'>
-                    Ahmedabad, Gujarat - 380054
-                  </p>
+
+                {/* Mumbai Address */}
+                <div className='flex gap-4 p-4 bg-card rounded-xl shadow-md hover:shadow-lg transition-shadow border border-border'>
+                  <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0'>
+                    <MapPin className='w-6 h-6 text-primary' />
+                  </div>
+                  <div>
+                    <h4 className='font-semibold text-foreground mb-1'>
+                      Address (Mumbai)
+                    </h4>
+                    <p className='text-muted-foreground'>
+                      Navkar Bhavsar & Co.
+                    </p>
+                    <p className='text-muted-foreground'>
+                      Duru House, 2nd & 3rd Floor,
+                    </p>
+                    <p className='text-muted-foreground'>
+                      Juhu Tara Road, Juhu,
+                    </p>
+                    <p className='text-muted-foreground'>
+                      Mumbai, Maharashtra - 400049
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
